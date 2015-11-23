@@ -1,0 +1,15 @@
+<h2>Calendar</h2>
+<p>
+  The month is {{ calCtrl.month }}
+</p>
+<p>
+  data = {{ calCtrl.data | json }}
+</p>
+
+<hr />
+
+<form ng-submit="calCtrl.createMeeting(meetingName)">
+  <label>Meeting Name</label>
+  <input type="text" ng-model="meetingName" required />
+  <button>Submit</button>
+</form>
