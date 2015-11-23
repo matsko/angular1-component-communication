@@ -1,6 +1,6 @@
 angular.module('App', [])
 
-  .controller('AppComponentController', [function() {
+  .controller('AppComponentController', function() {
     this.month = 'January';
     this.data = [
       { name: 'one', age: 20 },
@@ -12,18 +12,18 @@ angular.module('App', [])
     this.onMeetingCreated = function(meeting) {
       alert('meeting created: ' + meeting);
     };
-  }])
+  })
 
   .component('app', {
     templateUrl: '/app.html',
     controller: 'AppComponentController as appCtrl'
   })
 
-  .controller('CalendarComponentController', ['$scope', '$attrs', function($scope, $attrs) {
+  .controller('CalendarComponentController', function() {
     this.createMeeting = function(meetingName) {
       this.onCreateMeeting({ meeting: meetingName });
     };
-  }])
+  })
 
   .component('calendar', {
     templateUrl: '/calendar/component.html',
@@ -35,8 +35,8 @@ angular.module('App', [])
     }
   })
 
-  .controller('MeetingsComponentController', [function() {
-  }])
+  .controller('MeetingsComponentController', function() {
+  })
 
   .component('meetings', {
     templateUrl: '/meetings/component.html',
